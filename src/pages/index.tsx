@@ -4,8 +4,8 @@ import Head from "next/head";
 import style from "../styles/index.module.scss";
 
 import ImgSlider from "../components/ImgSlider/ImgSlider";
-import Movies from "../components/Movies";
-import Viewers from "../components/Viewers";
+import Movies from "../components/Movies/Movies";
+import Viewers from "../components/Viewers/Viewers";
 import { api } from "../utils/api";
 
 const Home: NextPage = () => {

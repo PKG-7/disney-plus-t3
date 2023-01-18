@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ImgSlider from "./ImgSlider/ImgSlider";
-import Movies from "./Movies";
-import Viewers from "./Viewers";
+import ImgSlider from "../ImgSlider/ImgSlider";
+import Movies from "../Movies/Movies";
+import Viewers from "../Viewers/Viewers";
 
 function Home() {
   return (
