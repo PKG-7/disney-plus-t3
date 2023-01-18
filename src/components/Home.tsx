@@ -1,22 +1,19 @@
-import styled from 'styled-components'
-import ImgSlider from './ImgSlider'
-import Movies from './Movies'
-import Viewers from './Viewers'
-
+import styled from "styled-components";
+import ImgSlider from "./ImgSlider/ImgSlider";
+import Movies from "./Movies";
+import Viewers from "./Viewers";
 
 function Home() {
-
-
   return (
     <Container>
-        <ImgSlider />
-        <Viewers />
-        <Movies />
+      <ImgSlider />
+      <Viewers />
+      <Movies />
     </Container>
-  )
+  );
 }
 
-export default Home
+export default Home;
 
 const Container = styled.main`
   min-height: calc(100vh - 70px);
@@ -25,8 +22,8 @@ const Container = styled.main`
   overflow-x: hidden;
 
   &:before {
-    background: url("/images/home-background.png") center center / cover 
-    no-repeat fixed;
+    background: url("/images/home-background.png") center center / cover
+      no-repeat fixed;
     content: "";
     position: absolute;
     top: 0;
@@ -35,4 +32,4 @@ const Container = styled.main`
     bottom: 0;
     z-index: -1;
   }
-`
+`;
