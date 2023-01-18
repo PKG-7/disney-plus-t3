@@ -15,25 +15,25 @@ export default function ImgSlider() {
   };
 
   return (
-    <div className={style.slider}>
-      <Slider {...settings}>
-        <div className={style.wrap}>
-          <Image
-            src="/images/slider-badging.jpg"
-            height={2000}
-            width={2000}
-            alt=""
-          />
-        </div>
-        <div className={style.wrap}>
-          <Image
-            src="/images/slider-badag.jpg"
-            height={2000}
-            width={2000}
-            alt=""
-          />
-        </div>
-      </Slider>
-    </div>
+    // <div>
+    <Slider className={style.slider} {...settings}>
+      <div className={style.wrap}>
+        <Image
+          src="/images/slider-badging.jpg"
+          height={2000}
+          width={2000}
+          alt=""
+        />
+      </div>
+      <div className={style.wrap}>
+        <Image
+          src="/images/slider-badag.jpg"
+          height={2000}
+          width={2000}
+          alt=""
+        />
+      </div>
+    </Slider>
+    // </div>
   );
 }

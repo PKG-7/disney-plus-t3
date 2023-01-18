@@ -7,6 +7,7 @@ import ImgSlider from "../components/ImgSlider/ImgSlider";
 import Movies from "../components/Movies/Movies";
 import Viewers from "../components/Viewers/Viewers";
 import { api } from "../utils/api";
+import Header from "../components/Header/Header";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
       <main className={style.main}>
         <ImgSlider />
         <Viewers />
