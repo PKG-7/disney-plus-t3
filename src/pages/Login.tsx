@@ -1,91 +1,31 @@
-import styled from 'styled-components'
+import Image from "next/image";
 
-
-function Login() {
-
-
+export default function Login() {
   return (
-    <Container>
-        <CTA>
-            <CTALogoOne src="/images/cta-logo-one.svg" />
-            <SignUp>GET ALL THERE</SignUp>
-            <Description>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione aliquam cupiditate sed et! Autem, perspiciatis. Dignissimos laudantium natus quisquam eius. Eius magnam delectus non harum animi sed eum? Numquam, debitis.
-            </Description>
-            <CTALogoTwo src="/images/cta-logo-two.png" />
-        </CTA>
-    </Container>
-  )
+    <div className="opacity- relative flex min-h-screen justify-center bg-login-bg-image align-top">
+      <div className=" flex max-w-[850px] flex-col items-center justify-center">
+        <Image
+          alt="logo"
+          width={650}
+          height={650}
+          src="/images/cta-logo-one.svg"
+        />
+        <a className="mt-2 mb-3 w-full cursor-pointer rounded bg-blue-600 py-2 px-4 text-center font-bold text-white transition hover:scale-[1.01] hover:bg-blue-500">
+          GET ALL THERE
+        </a>
+        <p className="m-1 text-center text-[13px] leading-5 text-white">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
+          aliquam cupiditate sed et! Autem, perspiciatis. Dignissimos laudantium
+          natus quisquam eius. Eius magnam delectus non harum animi sed eum?
+          Numquam, debitis.
+        </p>
+        <Image
+          alt="logo"
+          width={650}
+          height={650}
+          src="/images/cta-logo-two.png"
+        />
+      </div>
+    </div>
+  );
 }
-
-export default Login
-
-const Container = styled.div`
-    position: relative;
-    height: calc(99vh - 70px);
-    display: flex;
-    align-items: top;
-    justify-content: center;
-
-    &:before {
-        position: absolute;
-        content: "";
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-        background-image: url("/images/login-background.jpg");
-        background-position: top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        opacity: 0.7;
-        z-index: -1;
-    }
-`
-const CTA = styled.div`
-    max-width: 850px ;
-    padding: 80px 40px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 200px;
-    align-items: center;
-    
-`
-
-const CTALogoOne = styled.img`
-    
-`
-
-const SignUp = styled.a`
-    margin-top: 8px;
-    margin-bottom: 12px;
-    width: 100%;
-    background-color: #0063e5;
-    font-weight: bold;
-    padding: 17px 0;
-    color: #f9f9f9;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 250ms;
-    letter-spacing: 1.5px;
-
-    &:hover {
-        background: #0483ee;
-        transform: scale(1.01);
-    }
-`
-
-const Description = styled.p`
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-align: center;
-    line-height: 1.5;
-`
-
-const CTALogoTwo = styled.img`
-    width: 90%;
-`
