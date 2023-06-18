@@ -64,8 +64,8 @@ export default function Header() {
       {/* UserProfile */}
       <Link href="/login">
         <Image
-          width={20}
-          height={20}
+          width={50}
+          height={50}
           alt="user"
           className={style.userImg}
           src="/images/user-image.png"
