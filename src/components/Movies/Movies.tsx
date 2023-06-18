@@ -1,38 +1,25 @@
 import Image from "next/image";
-import style from "./Movies.module.scss";
+import st from "./Movies.module.scss";
+import { type iMoviesData } from "../../../AppData/movies";
 
-function Movies() {
+export default function Movies({ moviesData }: { moviesData: iMoviesData[] }) {
   return (
-    <div>
-      <h4>Recommended for you</h4>
-      <div className={style.content}>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
-        <div className={style.wrap}>
-          <Image height={500} width={500} src="/images/simps.jpeg" alt="" />
-        </div>
+    <>
+      <h4 className={st.title}>Recommended for you</h4>
+      <div className={st.content}>
+        {moviesData.map((movie) => {
+          return (
+            <div key={movie.id} className={st.wrap}>
+              <Image
+                height={500}
+                width={500}
+                src={movie.image}
+                alt={movie.altTag}
+              />
+            </div>
+          );
+        })}
       </div>
-    </div>
+    </>
   );
 }
-
-export default Movies;

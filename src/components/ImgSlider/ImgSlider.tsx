@@ -1,10 +1,15 @@
-import Slider from "react-slick";
-import style from "./ImgSlider.module.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import { type iSliderData } from "../../../AppData/slider";
+import style from "./ImgSlider.module.scss";
 
-export default function ImgSlider() {
+export default function ImgSlider({
+  sliderData,
+}: {
+  sliderData: iSliderData[];
+}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -15,25 +20,19 @@ export default function ImgSlider() {
   };
 
   return (
-    // <div>
     <Slider className={style.slider} {...settings}>
-      <div className={style.wrap}>
-        <Image
-          src="/images/slider-badging.jpg"
-          height={2000}
-          width={2000}
-          alt=""
-        />
-      </div>
-      <div className={style.wrap}>
-        <Image
-          src="/images/slider-badag.jpg"
-          height={2000}
-          width={2000}
-          alt=""
-        />
-      </div>
+      {sliderData.map((item) => {
+        return (
+          <div key={item.id} className={style.wrap}>
+            <Image
+              src={item.image}
+              height={2000}
+              width={2000}
+              alt={item.altTag}
+            />
+          </div>
+        );
+      })}
     </Slider>
-    // </div>
   );
 }

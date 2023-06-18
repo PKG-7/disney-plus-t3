@@ -1,29 +1,25 @@
 import Image from "next/image";
-import style from "./detail.module.scss";
+import st from "./detail.module.scss";
 
 export default function Detail() {
   return (
-    <div className={style.container}>
-      <div className={style.background}>
+    <div className={st.container}>
+      <div className={st.background}>
         <Image
-          height={200}
-          width={200}
+          className={st.bgImage}
+          height={1000}
+          width={1000}
           alt=""
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4F39B7E16726ECF419DD7C49E011DD95099AA20A962B0B10AA1881A70661CE45/scale?width=1440&aspectRatio=1.78&format=jpeg"
+          src="/images/detail/hinkalina.jpeg"
         />
       </div>
 
-      <div className={style.ImageTitle}>
-        <Image
-          height={200}
-          width={200}
-          alt=""
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78"
-        />
+      <div className={st.ImageTitle}>
+        <Image height={200} width={200} alt="" src="/images/detail/bao.png" />
       </div>
 
-      <div className={style.controls}>
-        <button className={style.playButton}>
+      <div className={st.controls}>
+        <button className={st.playButton}>
           <Image
             height={200}
             width={200}
@@ -33,7 +29,7 @@ export default function Detail() {
           <span>PLAY</span>
         </button>
 
-        <button className={style.TrailerButton}>
+        <button className={st.TrailerButton}>
           <Image
             height={200}
             width={200}
@@ -43,20 +39,20 @@ export default function Detail() {
           <span>Trailer</span>
         </button>
 
-        <button className={style.addButton}>
+        <button className={st.addButton}>
           <span>+</span>
         </button>
 
-        <div className={style.groupWatchButton}>
+        <div className={st.groupWatchButton}>
           <Image height={200} width={200} alt="" src="/images/group-icon.png" />
         </div>
       </div>
 
-      <div className={style.subtitle}>
+      <div className={st.subtitle}>
         2018 • 7m • Family, Fantasy, Kids, Animation
       </div>
 
-      <div className="style.description">
+      <div className={st.description}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi totam
         accusamus iure vero optio debitis dolor id quidem esse tempore veritatis
         minima rerum unde veniam explicabo, omnis quasi rem. Eaque!

@@ -1,51 +1,23 @@
 import Image from "next/image";
 import style from "./Viewers.module.scss";
+import { type iViewers } from "../../../AppData/vievers";
+import Link from "next/link";
 
-function Viewers() {
+export default function Viewers({ viewersData }: { viewersData: iViewers[] }) {
   return (
     <div className={style.container}>
-      <div className={style.wrap}>
-        <Image
-          width={300}
-          height={300}
-          src="/images/viewers-disney.png"
-          alt=""
-        />
-      </div>
-      <div className={style.wrap}>
-        <Image
-          width={300}
-          height={300}
-          src="/images/viewers-pixar.png"
-          alt=""
-        />
-      </div>
-      <div className={style.wrap}>
-        <Image
-          width={300}
-          height={300}
-          src="/images/viewers-marvel.png"
-          alt=""
-        />
-      </div>
-      <div className={style.wrap}>
-        <Image
-          width={300}
-          height={300}
-          src="/images/viewers-starwars.png"
-          alt=""
-        />
-      </div>
-      <div className={style.wrap}>
-        <Image
-          width={300}
-          height={300}
-          src="/images/viewers-national.png"
-          alt=""
-        />
-      </div>
+      {viewersData.map((viewer) => (
+        <div key={viewer.id} className={style.wrap}>
+          <Link href={`/${viewer.pageLink}`}>
+            <Image
+              width={300}
+              height={300}
+              src={viewer.image}
+              alt={viewer.altTag}
+            />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }
-
-export default Viewers;

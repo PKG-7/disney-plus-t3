@@ -1,29 +1,36 @@
 import Image from "next/image";
 import style from "./Header.module.scss";
+import Link from "next/link";
 
-// TODO:
-// Поменять ссылки <a href=""> на настоящие
+// TODO: Поменять ссылки на реальные страницы, ага))
 
 export default function Header() {
   return (
     <nav className={style.nav}>
-      <Image
-        width={20}
-        height={20}
-        className={style.logo}
-        src="/images/logo.svg"
-        alt="logo"
-      />
+      {/* Disney Logo */}
+      <Link href="/">
+        <Image
+          width={20}
+          height={20}
+          className={style.logo}
+          src="/images/logo.svg"
+          alt="logo"
+        />
+      </Link>
+
+      {/* Menu */}
       <div className={style.navMenu}>
-        <a>
+        <Link href="/">
           <Image width={20} height={20} src="/images/home-icon.svg" alt="" />
           <span>HOME</span>
-        </a>
-        <a>
+        </Link>
+
+        <Link href="/">
           <Image width={20} height={20} src="/images/search-icon.svg" alt="" />
           <span>SEARCH</span>
-        </a>
-        <a>
+        </Link>
+
+        <Link href="/">
           <Image
             width={20}
             height={20}
@@ -31,8 +38,9 @@ export default function Header() {
             alt=""
           />
           <span>WATCHLIST</span>
-        </a>
-        <a>
+        </Link>
+
+        <Link href="/">
           <Image
             width={20}
             height={20}
@@ -40,23 +48,29 @@ export default function Header() {
             alt=""
           />
           <span>ORIGINALS</span>
-        </a>
-        <a>
+        </Link>
+
+        <Link href="/">
           <Image width={20} height={20} src="/images/movie-icon.svg" alt="" />
           <span>MOVIES</span>
-        </a>
-        <a>
+        </Link>
+
+        <Link href="/">
           <Image width={20} height={20} src="/images/series-icon.svg" alt="" />
           <span>SERIES</span>
-        </a>
+        </Link>
       </div>
-      <Image
-        width={20}
-        height={20}
-        alt="user"
-        className={style.userImg}
-        src="/images/user-image.png"
-      />
+
+      {/* UserProfile */}
+      <Link href="/login">
+        <Image
+          width={20}
+          height={20}
+          alt="user"
+          className={style.userImg}
+          src="/images/user-image.png"
+        />
+      </Link>
     </nav>
   );
 }
